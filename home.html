@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumen POJK/SEOJK BPR</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Logo BPR" class="logo-header">
+    <h1>Portal Dokumen BPR</h1>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="#">Home</a> / <span>Dokumen</span>
+  </nav>
+
+  <main>
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Cari dokumen...">
+      <select id="categoryFilter">
+        <option value="all">Semua Kategori</option>
+        <option value="pojk">POJK</option>
+        <option value="seojk">SEOJK</option>
+        <option value="lainnya">Lainnya</option>
+      </select>
+    </div>
+
+    <div class="accordion" id="docAccordion">
+      <div class="accordion-item" data-category="pojk">
+        <h3>📘 POJK</h3>
+        <ul>
+          <li><a href="pojk/contoh-pojk.pdf" target="_blank">Contoh POJK</a> 
+              <button onclick="previewPDF('pojk/contoh-pojk.pdf')">Preview</button></li>
+        </ul>
+      </div>
+      <div class="accordion-item" data-category="seojk">
+        <h3>📗 SEOJK</h3>
+        <ul>
+          <li><a href="seojk/contoh-seojk.pdf" target="_blank">Contoh SEOJK</a> 
+              <button onclick="previewPDF('seojk/contoh-seojk.pdf')">Preview</button></li>
+        </ul>
+      </div>
+      <div class="accordion-item" data-category="lainnya">
+        <h3>📂 Lainnya</h3>
+        <ul>
+          <li><a href="lainnya/contoh.pdf" target="_blank">Contoh Dokumen Lain</a> 
+              <button onclick="previewPDF('lainnya/contoh.pdf')">Preview</button></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <button onclick="printCategory()">Print PDF per Kategori</button>
+    <p>© 2025 BPR. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <div id="pdfModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+</body>
+</html>

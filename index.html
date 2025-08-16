@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - BPR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <img src="assets/logo.png" alt="Logo BPR" class="logo">
+    <h2>Portal Dokumen BPR</h2>
+    <input type="password" id="passwordInput" placeholder="Masukkan Password">
+    <button onclick="checkPassword()">Enter</button>
+    <p id="error" class="error"></p>
+  </div>
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      if (input === "bpr2025") {
+        window.location.href = "home.html";
+      } else {
+        document.getElementById('error').innerText = "Password salah!";
+      }
+    }
+  </script>
+</body>
+</html>
